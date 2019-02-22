@@ -1,4 +1,4 @@
-// Require orm
+//Require orm
 var orm = require("../config/orm");
 
 var burger = {
@@ -19,5 +19,5 @@ var burger = {
   }
 }
 
-// Export the database functions for the controller (burgersController.js).
+//Export the database functions for the controller (burgersController.js).
 module.exports = burger;
