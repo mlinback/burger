@@ -10,7 +10,7 @@
     <div class="col-4">
       <h4 class="text-center">Burgers to devour!</h4>
       <ul>
-        {{#each burger}}
+        {{#each burgers}}
         {{#unless devoured}}
         <form action="/burger/eat/{{id}}" method="POST">
         <div>
