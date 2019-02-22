@@ -1,3 +1,36 @@
-{{!-- * Setup the `index.handlebars` to have the template that Handlebars can render onto. --}}
+<div class="container">
+  <div class="row justify-content-center">
+    <h1 class="mt-4">Devour the Burger!</h1>
+  </div>
+  <div class="row justify-content-center">
+    <img src="../public/assets/images/burger.jpg" class="burger_img">
+  </div>
 
-     {{!-- * Create a button in `index.handlebars` that will submit the user input into the database. --}}
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h4 class="text-center">Burgers to devour!</h4>
+      <ul>
+        {{#each burger}}
+        {{#unless devoured}}
+        <form action="/burger/eat/{{id}}" method="POST">
+        <div>
+          <li class="m-2">{{burger_name}}<button class="ml-2 btn btn-outline-success" type="submit">Devour!</button></li>
+        </div>
+        </form>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <h2 class="text-center">Add a burger</h2>
+  </div>
+  <div class="row justify-content-center">
+    <form class="create-form" action="/burger/create" method="POST">
+      <label for="burger">Burger Name:</label>
+      <input type="text" id="burger" name="burger_name"><button class="m-2 btn btn-outline-success" type="submit">Add Burger</button>
+    </form>
+  </div>
+
+</div>
