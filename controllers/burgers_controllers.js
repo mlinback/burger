@@ -1,12 +1,6 @@
-// Inside the `burgers_controller.js` file, import the following:
-
-// * Express
-// * `burger.js`
-
-//  Create the `router` for the app, and export the `router` at the end of the file.
-
 var express = require("express");
 
+//Create the `router` for the app, and export the `router` at the end of the file.
 var router = express.Router();
 
 // Import the model (burger.js) to use its database functions.
@@ -31,7 +25,7 @@ router.post("/burger/create", function(req, res) {
 })
 
 //devours selected burger
-router.post("/burger/eat/:id", functio(req, res) {
+router.post("/burger/eat/:id", function(req, res) {
   burger.updateOne([req.params.id], function(result) {
     res.redirect("/");
   })
